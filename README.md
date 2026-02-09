@@ -1,0 +1,1 @@
+# Property_24_Details_Project
