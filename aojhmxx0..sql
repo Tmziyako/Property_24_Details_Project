@@ -15,15 +15,24 @@ Select * from property24 where Parking >= '2';
 --Show properties where the monthly repayment is greater than R25,000--
 Select * from property24 where monthly_repayment > '25000';
 --Show all properties ordered by property price from highest to lowest--
-Select * from property 
-10. List properties ordered by floor size from smallest to largest.
-11. Show Gauteng properties ordered by monthly repayment.
-12. Find Western Cape properties priced below R3,000,000.
-13. Show KwaZulu-Natal properties with 3 or more bedrooms.
-14. Find properties in Limpopo or Free State ordered by property price.
-15. Show the 10 most expensive properties.
-16. Show the 5 cheapest properties.
-17. Show the top 10 properties with the largest floor size.
-18. Which province appears to have the highest priced properties?
-19. Which cities appear to have the most affordable housing?
-20. What minimum income is typically required for properties priced above R4,000,000?
+Select * from property24 order by property_price Desc;
+--List properties ordered by floor size from smallest to largest--
+Select * from property24 order by floor_size Asc;
+--Show Gauteng properties ordered by monthly repayment--
+Select * from property24 where province = 'Gauteng' order by monthly_repayment asc;
+--Find Western Cape properties priced below R3,000,000--
+Select * from property24 where province = 'Western Cape' and property_price <3000000;
+--Show KwaZulu-Natal properties with 3 or more bedrooms--
+Select * from property24 where province = 'Kwazulu-Natal' and Bedrooms >= 3;
+--Find properties in Limpopo or Free State ordered by property price--
+Select * from property24 where province in ('Limpopo';'Free State') order by property_price asc,
+--Show the 10 most expensive properties--
+Select top 10* from property24 order by property_price Desc;
+--Show the 5 cheapest properties--
+Select top 5* from property24 order by property_price Asc;
+--Show the top 10 properties with the largest floor size--
+Select top 10* from property24 order by Floor_size Desc;
+--Which province appears to have the highest priced properties?--
+Select PROVINCE from property24 order by property_price desc;
+--Which cities appear to have the most affordable housing--
+--What minimum income is typically required for properties priced above R4,000,000--
